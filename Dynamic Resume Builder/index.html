@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Resume Builder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Dynamic Resume Builder</h1>
+        <button id="theme-toggle">Switch Mode</button>
+    </header>
+
+    <main>
+        <!-- Form to capture user details -->
+        <section id="form-section">
+            <h2>Enter Your Information</h2>
+            <form id="resume-form">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" required>
+                
+                <label for="education">Education:</label>
+                <input type="text" id="education" required>
+                
+                <label for="skills">Skills (comma separated):</label>
+                <input type="text" id="skills" required>
+                
+                <label for="work-experience">Work Experience:</label>
+                <input type="text" id="work-experience" required>
+
+                <!-- New: Profile picture upload -->
+                <label for="profile-picture">Upload Profile Picture:</label>
+                <input type="file" id="profile-picture" accept="image/*">
+
+                <button type="submit">Generate Resume</button>
+            </form>
+        </section>
+
+        <!-- Generated Resume Section -->
+        <section id="resume-section" style="display:none;">
+            <h2>Your Resume</h2>
+
+            <!-- Display Profile Picture -->
+            <div class="profile-picture-wrapper">
+                <img id="display-picture" alt="Profile Picture">
+            </div>
+
+            <p><strong>Name:</strong> <span id="display-name" contenteditable="true"></span></p>
+            <p><strong>Email:</strong> <span id="display-email" contenteditable="true"></span></p>
+            <p><strong>Phone:</strong> <span id="display-phone" contenteditable="true"></span></p>
+            <p><strong>Education:</strong> <span id="display-education" contenteditable="true"></span></p>
+            <p><strong>Skills:</strong> <span id="display-skills" contenteditable="true"></span></p>
+            <p><strong>Work Experience:</strong> <span id="display-work-experience" contenteditable="true"></span></p>
+
+            <!-- Display generated link -->
+            <div id="shareable-link" style="display:none;">
+                <p>Shareable Link: <a id="link-url" href="" target="_blank"></a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Dynamic Resume Builder</p>
+    </footer>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
